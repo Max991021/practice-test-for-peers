@@ -11,8 +11,15 @@ def calculate_shipping_cost(weight, destination):
     - 'international': $15.00 flat rate + $5.00 per lb.
     - If weight <= 0, return 0.0.
     """
-    # TODO: Implement the conditional logic to return the total cost
-    pass
+    while weight >0:
+        if 'domestic' == destination.lower():
+            return  (5.00) + (1.50)* weight
+        elif 'international' == destination.lower():
+            return (15.00) + (5.00)*weight
+            
+    else:
+        return  0.0
+
 
 
 def filter_even_numbers(numbers):
@@ -21,8 +28,11 @@ def filter_even_numbers(numbers):
     Accept a list of integers and return a new list containing only the even numbers.
     - If the list is empty, return an empty list.
     """
-    # TODO: Use a loop to filter the list
-    pass
+    if numbers is None:
+        return []
+    else:
+        return [i for i in numbers if i%2 ==0]
+    
 
 def generate_multiplication_table(n, limit):
     """
@@ -31,8 +41,8 @@ def generate_multiplication_table(n, limit):
     up to the 'limit'. 
     Example: n=2, limit=3 -> ["2 * 1 = 2", "2 * 2 = 4", "2 * 3 = 6"]
     """
-    # TODO: Implement loop-based string formatting
-    pass
+    return [str(f'{n} * {i} = {n*i}') for i in range(1,limit+1) ]
+    
 
 def find_longest_word(sentence):
     """
@@ -41,8 +51,26 @@ def find_longest_word(sentence):
     - If there is a tie, return the first one found.
     - If the string is empty, return an empty string.
     """
-    # TODO: Split the string and track the maximum length word
-    pass
+    if sentence == '':
+        word = ''
+    else:
+        sentence = sentence.split()
+        worddict = {}
+        for word in sentence:
+            
+            worddict[word] = len(word)
+        
+    
+            
+        wordnum = max(worddict.values())
+        print(wordnum)
+        for key, value in worddict.items():
+            if value == wordnum:
+                word = key 
+                break
+    return word
+print(find_longest_word(""))
+        
 
 def fizz_buzz_custom(start, end, fizz_val, buzz_val):
     """
@@ -53,5 +81,15 @@ def fizz_buzz_custom(start, end, fizz_val, buzz_val):
     - Multiples of both are "FizzBuzz"
     - Otherwise, use the number as a string.
     """
-    # TODO: Implement logic for custom FizzBuzz range
-    pass
+    fb = []
+    for i in range(start,end+1):
+        if i % fizz_val == 0 and i % buzz_val == 0:
+            fb.append('FizzBuzz')
+        elif i % fizz_val == 0:
+            fb.append('Fizz')
+        elif i % buzz_val == 0:
+            fb.append('Buzz')
+        else:
+            fb.append(str(i))
+    
+    return fb

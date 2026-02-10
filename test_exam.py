@@ -61,3 +61,6 @@ def summary_score(request):
     print("\n" + "="*30)
     print(f"SECTION A SCORE: {score:.0f}%")
     print("="*30)
+    
+    
+    

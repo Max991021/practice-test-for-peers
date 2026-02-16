@@ -93,3 +93,48 @@ def fizz_buzz_custom(start, end, fizz_val, buzz_val):
             fb.append(str(i))
     
     return fb
+
+def table():
+     for i in range(1, 11):
+        print(" "*i, end=' ')
+        for j in range(i+1, 11):
+            print(i, end=' ')
+        print()
+ 
+result = table()
+print(result)
+
+if False:
+     print('Something')
+else:
+    print('Why?')
+    
+    
+for i in range(3):
+    for j in range(2):
+        if i == j:
+            print(i, j)
+            
+            
+n = 5
+for i in range(1,n+1):
+    for j in range(1):
+        if i %2:
+            print(' '*n, "*"*i)
+            n -=1
+n=5
+for i in range(n+1,0,-1):
+    for j in range(1):
+        if i %2:
+            if i == 5:
+                continue
+            else:
+                n-= 1
+                print(' '*(n), "*"*i)
+                n+=2            
+            
+# for i in range(n+1,0):
+#     for j in range(i):
+#         if i %2:
+#             print(' '*n, "*"*i)
+   
